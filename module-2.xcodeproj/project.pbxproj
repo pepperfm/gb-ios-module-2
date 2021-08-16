@@ -14,6 +14,8 @@
 		0A4802CC26BC560B00D986A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4802CB26BC560B00D986A5 /* Assets.xcassets */; };
 		0A4802CF26BC560B00D986A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4802CD26BC560B00D986A5 /* LaunchScreen.storyboard */; };
 		0AAB7F9226C9BBBF00D5A31F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB7F9126C9BBBF00D5A31F /* LoginViewController.swift */; };
+		0AF57FCE26CAD202000163CE /* FavoriteCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF57FCD26CAD202000163CE /* FavoriteCitiesViewController.swift */; };
+		0AF57FD126CAD479000163CE /* FavoriteCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF57FD026CAD479000163CE /* FavoriteCityTableViewCell.swift */; };
 		B0D6114682EA8DA4AEB5D5BA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B0D61B072E3DF63CC2C0F303 /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		0A4802CE26BC560B00D986A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A4802D026BC560B00D986A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAB7F9126C9BBBF00D5A31F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0AF57FCD26CAD202000163CE /* FavoriteCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCitiesViewController.swift; sourceTree = "<group>"; };
+		0AF57FD026CAD479000163CE /* FavoriteCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCityTableViewCell.swift; sourceTree = "<group>"; };
 		B0D61B072E3DF63CC2C0F303 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 		0AAB7F8F26C9BB3900D5A31F /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
+				0AF57FCB26CAD08E000163CE /* CitiesList */,
+				0AF57FCA26CAD07F000163CE /* FavoriteCities */,
 				0AAB7F9026C9BBA500D5A31F /* Login */,
 			);
 			path = Introduction;
@@ -111,6 +117,38 @@
 				0AAB7F9126C9BBBF00D5A31F /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0AF57FCA26CAD07F000163CE /* FavoriteCities */ = {
+			isa = PBXGroup;
+			children = (
+				0AF57FCF26CAD3C9000163CE /* Cell */,
+				0AF57FCC26CAD1B5000163CE /* Controller */,
+			);
+			path = FavoriteCities;
+			sourceTree = "<group>";
+		};
+		0AF57FCB26CAD08E000163CE /* CitiesList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CitiesList;
+			sourceTree = "<group>";
+		};
+		0AF57FCC26CAD1B5000163CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AF57FCD26CAD202000163CE /* FavoriteCitiesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AF57FCF26CAD3C9000163CE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0AF57FD026CAD479000163CE /* FavoriteCityTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF57FD126CAD479000163CE /* FavoriteCityTableViewCell.swift in Sources */,
 				0AAB7F9226C9BBBF00D5A31F /* LoginViewController.swift in Sources */,
 				0A4802C726BC560A00D986A5 /* BaseViewController.swift in Sources */,
 				0A4802C326BC560A00D986A5 /* AppDelegate.swift in Sources */,
 				0A4802C526BC560A00D986A5 /* SceneDelegate.swift in Sources */,
+				0AF57FCE26CAD202000163CE /* FavoriteCitiesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

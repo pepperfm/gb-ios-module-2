@@ -17,8 +17,27 @@ final class LoginViewController: UIViewController {
     @IBOutlet private var button: UIButton!
     
     @IBAction private func buttonSubmit(_ sender: UIButton) {
-        let login = loginInput.text
-        let password = passwordInput.text
+        
+    }
+    @IBAction private func demoButtonSubmit(_ sender: UIButton) {
+        performSegue(withIdentifier: "demoLoginSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationController = segue.destination as! UITabBarController
+        destinationController.tabBarItem.badgeValue = "1"
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Ok", style: .cancel) { [weak self] _ in
+            guard let self = self else { return }
+            self.loginInput.text = ""
+            self.passwordInput.text = ""
+        }
+        
+        alert.addAction(closeAction)
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +54,23 @@ final class LoginViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let login = loginInput.text
+        let password = passwordInput.text
+        
+        if login == "1" && password == "1" {
+            return true
+        }
+        
+        showAlert(title: "Error", message: "Wrong input data")
+        return false
+    }
+    
+    @IBAction func logout(_ segue: UIStoryboardSegue) {
+        loginInput.text = ""
+        passwordInput.text = ""
     }
     
     @objc func hideKeyboard() {
